@@ -1,7 +1,9 @@
 import React from "react";
 
 const ButtonComponent = props => {
-  return <button onClick={props.onClickFunction}>{props.counter}</button>;
+  const handlerClick = () => props.onClickFunction(props.increment);
+
+  return <button onClick={handlerClick}>{props.increment}</button>;
 };
 
 export default ButtonComponent;
