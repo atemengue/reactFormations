@@ -30,7 +30,16 @@ form {
   margin-bottom: 1rem;
 }
 
+form {
+  border: thin solid #ddd;
+  background-color: #fbfbfb;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
 .container {
   margin: 0 auto;
-  width: 300px;
+  width: 400px;
 }
