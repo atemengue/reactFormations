@@ -1,13 +1,13 @@
 import React from "react";
 import "./App.css";
-import Card from "./Card";
+import CardList from "./CardList";
 
 function App() {
   return (
     <div className="App">
       <h1 className="header">The Github Card</h1>
       <div className="container">
-        <Card />
+        <CardList />
       </div>
     </div>
   );

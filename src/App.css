@@ -1,7 +1,10 @@
-.github-profile .img {
+.github-profile {
   margin: 1rem;
 }
 
+.github-profile img {
+  width: 75px;
+}
 .github-profile .info {
   display: inline-block;
   margin-left: 12px;
