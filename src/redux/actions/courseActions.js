@@ -1,12 +1,9 @@
-import { CREATE_COURSE, LOAD_COURSES_SUCCESS } from "./actionsTypes";
+import {
+  LOAD_COURSES_SUCCESS,
+  UPDATE_COURSE_SUCCESS,
+  CREATE_COURSE_SUCCESS
+} from "./actionsTypes";
 import * as courseApi from "../../api/courseApi";
-
-export function createCourse(course) {
-  return {
-    type: CREATE_COURSE,
-    value: course
-  };
-}
 
 export function loadCourses() {
   return function(dispatch) {
@@ -27,3 +24,29 @@ export function loadCoursesSuccess(courses) {
     value: courses
   };
 }
+
+const updateCourseSuccess = course => {
+  return {
+    type: UPDATE_COURSE_SUCCESS,
+    value: course
+  };
+};
+
+const createCourseSucces = course => {
+  return {
+    type: CREATE_COURSE_SUCCESS,
+    value: course
+  };
+};
+
+export const saveCourse = course => dispatch =>
+  courseApi
+    .saveCourse(course)
+    .then(savedCourse => {
+      course.id
+        ? dispatch(updateCourseSuccess(savedCourse))
+        : dispatch(createCourseSucces(savedCourse));
+    })
+    .catch(error => {
+      throw error;
+    });
