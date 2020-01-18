@@ -5,6 +5,7 @@ import AboutPage from "./About/AboutPage";
 import Header from "./common/Header";
 import PageNotFound from "./PageNotFound";
 import CoursesPage from "./courses/CoursesPage";
+import ManagerCoursePage from "../redux/reducers/ManagerCoursePage";
 
 function App() {
   return (
@@ -14,6 +15,8 @@ function App() {
         <Route path="/" exact component={HomePage} />
         <Route path="/courses" component={CoursesPage} />
         <Route path="/about" component={AboutPage} />
+        <Route path="/course/:slug" component={ManagerCoursePage} />
+        <Route path="/course" component={ManagerCoursePage} />
         <Route component={PageNotFound} />
       </Switch>
     </div>
