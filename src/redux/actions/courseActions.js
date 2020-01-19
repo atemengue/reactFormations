@@ -4,9 +4,11 @@ import {
   CREATE_COURSE_SUCCESS
 } from "./actionsTypes";
 import * as courseApi from "../../api/courseApi";
+import { beginApiCall, apiCallError } from "./apiStatusActions";
 
 export function loadCourses() {
   return function(dispatch) {
+    dispatch(beginApiCall());
     return courseApi
       .getCourses()
       .then(courses => {
@@ -39,14 +41,33 @@ const createCourseSucces = course => {
   };
 };
 
-export const saveCourse = course => dispatch =>
-  courseApi
-    .saveCourse(course)
-    .then(savedCourse => {
-      course.id
-        ? dispatch(updateCourseSuccess(savedCourse))
-        : dispatch(createCourseSucces(savedCourse));
-    })
-    .catch(error => {
-      throw error;
-    });
+// export const saveCourse = course => dispatch => {
+//   dispatch(beginApiCall());
+//   courseApi
+//     .saveCourse(course)
+//     .then(savedCourse => {
+//       course.id
+//         ? dispatch(updateCourseSuccess(savedCourse))
+//         : dispatch(createCourseSucces(savedCourse));
+//     })
+//     .catch(error => {
+//       throw error;
+//     });
+// };
+
+export const saveCourse = course => {
+  return function(dispatch) {
+    dispatch(beginApiCall());
+    return courseApi
+      .saveCourse(course)
+      .then(savedCourse => {
+        course.id
+          ? dispatch(updateCourseSuccess(savedCourse))
+          : dispatch(createCourseSucces(savedCourse));
+      })
+      .catch(error => {
+        dispatch(apiCallError(error));
+        throw error;
+      });
+  };
+};
