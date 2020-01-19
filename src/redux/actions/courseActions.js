@@ -36,7 +36,7 @@ const updateCourseSuccess = course => {
   };
 };
 
-const createCourseSucces = course => {
+export const createCourseSucces = course => {
   return {
     type: CREATE_COURSE_SUCCESS,
     value: course
