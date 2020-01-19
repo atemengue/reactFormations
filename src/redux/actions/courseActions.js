@@ -15,6 +15,7 @@ export function loadCourses() {
         dispatch(loadCoursesSuccess(courses));
       })
       .catch(error => {
+        dispatch(apiCallError(error));
         throw error;
       });
   };
