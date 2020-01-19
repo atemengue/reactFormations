@@ -1,7 +1,8 @@
 import {
   LOAD_COURSES_SUCCESS,
   UPDATE_COURSE_SUCCESS,
-  CREATE_COURSE_SUCCESS
+  CREATE_COURSE_SUCCESS,
+  DELETE_COURSE_OPTIMISTIC
 } from "./actionsTypes";
 import * as courseApi from "../../api/courseApi";
 import { beginApiCall, apiCallError } from "./apiStatusActions";
@@ -42,6 +43,13 @@ const createCourseSucces = course => {
   };
 };
 
+const deleCourseOptimistic = course => {
+  return {
+    type: DELETE_COURSE_OPTIMISTIC,
+    value: course
+  };
+};
+
 // export const saveCourse = course => dispatch => {
 //   dispatch(beginApiCall());
 //   courseApi
@@ -70,5 +78,12 @@ export const saveCourse = course => {
         dispatch(apiCallError(error));
         throw error;
       });
+  };
+};
+
+export const deleteCourse = course => {
+  return function(dispatch) {
+    dispatch(deleCourseOptimistic(course));
+    return courseApi.deleteCourse(course.id);
   };
 };
