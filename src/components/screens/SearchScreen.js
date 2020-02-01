@@ -4,7 +4,7 @@ import { Text, ScrollView } from "react-native";
 import useResults from "../../hooks/UseResults";
 import ResultsList from "../ResultsList";
 
-const SearchScreen = ({ navigation }) => {
+const SearchScreen = () => {
   const [searchApi, results, errorMessage] = useResults();
   const [term, setTerm] = useState("");
 
@@ -26,17 +26,11 @@ const SearchScreen = ({ navigation }) => {
         <ResultsList
           results={filterResultsByPrice("$")}
           title="Cost Effective"
-          navigation={navigation}
         />
-        <ResultsList
-          results={filterResultsByPrice("$$")}
-          title="Bit Pricer"
-          navigation={navigation}
-        />
+        <ResultsList results={filterResultsByPrice("$$")} title="Bit Pricer" />
         <ResultsList
           results={filterResultsByPrice("$$$")}
           title="Bit Spencer"
-          navigation={navigation}
         />
       </ScrollView>
     </>
