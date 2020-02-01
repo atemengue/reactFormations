@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import SearchBar from "../SearchBar";
-import { View, Text, ScrollView } from "react-native";
+import { Text, ScrollView } from "react-native";
 import useResults from "../../hooks/UseResults";
 import ResultsList from "../ResultsList";
 
-const SearchScreen = () => {
+const SearchScreen = ({ navigation }) => {
   const [searchApi, results, errorMessage] = useResults();
   const [term, setTerm] = useState("");
 
@@ -15,27 +15,31 @@ const SearchScreen = () => {
   };
 
   return (
-    <View>
+    <>
       <SearchBar
-        Bar
         onSubmitTerm={() => searchApi(term)}
         term={term}
         onSearchTerm={newTerm => setTerm(newTerm)}
       />
       {errorMessage ? <Text>{errorMessage}</Text> : null}
-      <Text> We have found {results.length}</Text>
       <ScrollView>
         <ResultsList
           results={filterResultsByPrice("$")}
           title="Cost Effective"
+          navigation={navigation}
         />
-        <ResultsList results={filterResultsByPrice("$$")} title="Bit Pricer" />
+        <ResultsList
+          results={filterResultsByPrice("$$")}
+          title="Bit Pricer"
+          navigation={navigation}
+        />
         <ResultsList
           results={filterResultsByPrice("$$$")}
           title="Bit Spencer"
+          navigation={navigation}
         />
       </ScrollView>
-    </View>
+    </>
   );
 };
 
