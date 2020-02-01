@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import yelp from "../api/yelp";
 
-const [results, setResults] = useState([]);
-const [errorMessage, setErrorMessage] = useState("");
-
 export default () => {
+  const [results, setResults] = useState([]);
+  const [errorMessage, setErrorMessage] = useState("");
+
   const searchApi = async searchTerm => {
     try {
       const response = await yelp.get("/search", {
@@ -25,5 +25,5 @@ export default () => {
     searchApi("pasta");
   }, []);
 
-  return [searchAPI, results, errorMessage];
+  return [searchApi, results, errorMessage];
 };
