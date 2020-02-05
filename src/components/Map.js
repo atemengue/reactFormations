@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { StyleSheet } from "react-native";
+import { ActivityIndicator, StyleSheet } from "react-native";
 import MapView, { Circle } from "react-native-maps";
 import { Context as LocationContext } from "../context/LocationContext";
 
@@ -8,6 +8,9 @@ const Map = () => {
     state: { currentLocation }
   } = useContext(LocationContext);
 
+  if (!currentLocation) {
+    return <ActivityIndicator size="large" />;
+  }
   return (
     <MapView
       style={styles.map}
