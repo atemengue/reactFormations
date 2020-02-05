@@ -6,7 +6,6 @@ import {
 import { useEffect, useState } from "react";
 
 export default (shouldTrack, callback) => {
-  console.log(shouldTrack, "FOCUSED");
   const [err, setErr] = useState(null);
 
   useEffect(() => {

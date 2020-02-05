@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useCallback, useContext } from "react";
 import { Text } from "react-native-elements";
 import { SafeAreaView, withNavigationFocus } from "react-navigation";
 import Map from "../components/Map";
@@ -8,11 +8,18 @@ import useLocation from "../hooks/UseLocation";
 import "../_mockLocation";
 
 const TrackCreateScreen = ({ isFocused }) => {
-  const { addLocation, state } = useContext(LocationContext);
+  const {
+    addLocation,
+    state: { recording }
+  } = useContext(LocationContext);
 
-  const [err] = useLocation(isFocused, location => {
-    addLocation(location, state.recording);
-  });
+  const callback = useCallback(
+    location => {
+      addLocation(location, recording);
+    },
+    [recording]
+  );
+  const [err] = useLocation(isFocused || recording, callback);
   return (
     <SafeAreaView forceInset={{ top: "always" }}>
       <Text h2>Create a Track</Text>
