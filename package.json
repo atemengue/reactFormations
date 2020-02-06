@@ -1,0 +1,15 @@
+{
+  "name": "kta-landing-page",
+  "version": "1.0.0",
+  "description": "simple landing who present kta-scan auto, mobile app motors",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "kta",
+    "regis"
+  ],
+  "author": "Regis Atemengue",
+  "license": "ISC"
+}

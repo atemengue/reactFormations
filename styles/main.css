@@ -2,14 +2,66 @@ body,
 ul {
   margin: 0;
   padding: 0;
+  color: grey;
 }
 
-/* container class */
+h3 {
+  color: black;
+}
+
+.mini-container-right {
+  margin-left: 25px;
+  flex: 1;
+}
+.mini-container-left {
+  margin-right: 25px;
+  flex: 1;
+}
+
+/* IMAGES RESPONSIE */
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+/* CONTAINER CLASS */
 .container {
   width: 80%;
   margin: auto;
 }
 
+/* CONTAINER-FLEX */
+
+.container-flex {
+  display: flex;
+}
+
+.container-flex-item {
+  flex: 1;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+/* SUBTITLE */
+h3.subtitle {
+  color: black;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* TEXT */
+
+.text {
+  text-align: justify;
+  line-height: 150%;
+}
+/* SECTION */
+
+section {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
 /* HEADER */
 
 header {
@@ -66,7 +118,7 @@ header nav ul .menu-download {
 
 .download-app button {
   color: white;
-  padding: 20px 30px;
+  padding: 15px 30px;
   font-weight: 700;
   border: 2px solid #fe5f80;
   border-radius: 50px;
@@ -93,8 +145,104 @@ header nav ul .menu-download {
 /* HEADER END */
 
 /* PICTURE HEADER */
+.picture-header {
+  background-color: #f8f5f2;
+}
 
-/* .picture-header {
-  clear: both;
-} */
+.picture-header-container {
+  width: 80%;
+  margin: auto;
+}
+
+.picture-header img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* PICTURE HEADER END */
+
+/* ABOUT APP */
+.about-app h2 {
+  text-align: center;
+}
+
+/* ABOUT APP END */
+
+/* HOW TO BUILD */
+.how-to-build-flex {
+  display: flex;
+}
+.how-to-build-flex .text-container {
+  flex: 1;
+}
+
+.how-to-build-flex .img-container {
+  flex: 1;
+}
+
+.img-container img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media screen and (max-width: 600px) {
+  .how-to-build-flex {
+    display: block;
+  }
+
+  .container-flex {
+    display: block;
+  }
+
+  .mini-container-left,
+  .mini-container-right {
+    margin: 0;
+  }
+}
+
+/* HOW TO BUILD END */
+
+/* DESIGN AND WIREFRAMES */
+.design-wireframes {
+  display: flex;
+}
+
+/* DESIGN AND WIREFRAMES END*/
+
+/* FOOTER */
+footer {
+  color: white;
+  position: relative;
+  height: 150px;
+  background-color: #fe5f08;
+}
+
+footer div {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  top: 20%;
+}
+
+footer .ul-link {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+footer .ul-link .link-item {
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  margin: 5px;
+  border-radius: 50%;
+}
+
+/* FOOTER END */
