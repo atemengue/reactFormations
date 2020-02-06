@@ -1,0 +1,100 @@
+body,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* container class */
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+/* HEADER */
+
+header {
+  height: 80px;
+}
+
+header nav {
+  width: 80%;
+  height: 100%;
+  margin: auto;
+}
+
+header nav ul {
+  position: relative;
+  list-style: none;
+  height: 100%;
+}
+
+header nav ul li.title {
+  float: left;
+  margin: 0;
+  position: absolute;
+  top: 40%;
+}
+
+header nav ul .menu-download {
+  float: right;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.burger-buttom div {
+  width: 35px;
+  height: 5px;
+  background-color: black;
+  margin: 6px 0;
+}
+
+.menu-download .burger-buttom {
+  display: none;
+}
+
+.nav .title {
+  position: absolute;
+  font-weight: 700;
+}
+
+.title a {
+  text-decoration: none;
+  color: black;
+}
+
+.download-app button {
+  color: white;
+  padding: 20px 30px;
+  font-weight: 700;
+  border: 2px solid #fe5f80;
+  border-radius: 50px;
+  cursor: pointer;
+  background-color: #fe5f08;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* responsive design */
+@media screen and (max-width: 600px) {
+  header nav {
+    width: 80%;
+    height: 100%;
+    margin: auto;
+  }
+  .download-app .btn-down {
+    display: none;
+  }
+  .menu-download .burger-buttom {
+    display: block;
+  }
+}
+
+/* HEADER END */
+
+/* PICTURE HEADER */
+
+/* .picture-header {
+  clear: both;
+} */
+/* PICTURE HEADER END */
