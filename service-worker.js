@@ -15,6 +15,8 @@ const filesTocache = [
   "pages/offiline.html"
 ];
 
+new Resq();
+
 const staticCacheName = "cacheV2";
 
 self.addEventListener("install", event => {
