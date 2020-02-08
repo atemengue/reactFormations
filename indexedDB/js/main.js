@@ -40,12 +40,18 @@
 
     objectStore.createIndex("email", "email", { unique: true });
 
+    // objectStore transaction error
+    objectStore.transaction.onerror = function(event) {};
+    //objectStore transaction complete
     objectStore.transaction.oncomplete = function(event) {
       var customerObjectStore = db
         .transaction("customers", "readwrite")
         .objectStore("customers");
       for (var i in customerData) {
-        customerObjectStore.add(customerData[i]);
+        var keyCustomer = customerObjectStore.add(customerData[i]);
+        keyCustomer.onsuccess = function(event) {
+          console.log(event.target.result);
+        };
       }
     };
   };
