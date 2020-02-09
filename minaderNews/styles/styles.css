@@ -1,0 +1,75 @@
+body,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  text-align: center;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.btn-section {
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 2px solid rgb(33, 141, 33);
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  padding: 1.5em;
+}
+
+a,
+button {
+  min-height: 48px;
+  min-width: 48px;
+}
+
+.btn {
+  color: white;
+  border: none;
+  background-color: rgb(33, 141, 33);
+  border-radius: 5%;
+}
+
+.news {
+}
+
+.card {
+  margin: 3%;
+  padding: 3%;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: 2px 1px 2px 1px rgba(0, 0, 0, 0.15);
+  border-radius: 3%;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+}
+
+.title .direction-sigle {
+  margin-right: 10px;
+  background-color: #1b39ce;
+  color: white;
+  padding: 5%;
+}
+
+.hastag span {
+  font-size: 0.8em;
+}
+
+.thread {
+  margin: 10px 0 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.thread .like {
+  display: flex;
+  align-items: center;
+}
