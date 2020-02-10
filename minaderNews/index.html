@@ -4,9 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="msapplication-starturl" content="/index.html">
+    <meta name="application-name" content="MINADER APP NEWS">
+
+    
     <link rel="stylesheet" href="./styles/styles.css" />
-    <link rel="manifest" href="manifest.json">
-    <link rel="icons" type="image/png" sizes="144x144"  href="./assets/icons/icon-144x144.png">
+    <link rel="manifest" href="/manifest.json">
+
+
+
+    <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="114x114"  href="/assets/icons/icon-144x144.png">
+    <link rel="icon" type="image/png" sizes="512x512"  href="/assets/icons/icon-512x512.png">
 
 
     <title>MINADER NEWS</title>
@@ -34,7 +44,7 @@
       <!-- HEADER BUTTON  END-->
       <!-- NEWS SECTION -->
       <section class="news"> 
-        <div class="card">
+        <!-- <div class="card">
           <div class="title">
             <span class="direction-sigle">DRH</span>
             <h4 class="title-post">Affectations du personnel</h4>
@@ -59,11 +69,27 @@
             <span>2</span>
           </span>
           <span>1 min read</span>
+          <span><a href="./pages/detail.html">Voir</a></span>
         </div>
-        </div>
+        </div> -->
       </section>
       <!-- NEWS SECTION -->
-      
+      <section id="installBanner" class="banner">
+        <!-- <button class="btn btn-install"  id="installBtn">Install app</button> -->
+      </section>
     </main>
   </body>
+  <script>
+    if('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('service-worker.js')
+        .then(registration => {
+        //  console.log(registration)
+        }).catch(err => console.log(err))
+      })
+    } else {
+      //console.log('le navigateur ne supporte pas les SW')
+    }
+  </script>
+  <script src="./js/idb.js"></script>
 </html>

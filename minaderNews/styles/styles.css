@@ -33,6 +33,7 @@ button {
   border: none;
   background-color: rgb(33, 141, 33);
   border-radius: 5%;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }
 
 .news {

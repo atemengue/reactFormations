@@ -3,8 +3,9 @@
   "short_name": "MINADER NEWS APP",
   "theme_color": "#47a35b",
   "background_color": "#ffffff",
-  "display": "browser",
-  "Scope": "/",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "orientation": "any",
   "dir": "ltr",
   "lang": "fr-FR",
   "description": "application presentant les news du MINADER",
@@ -12,7 +13,11 @@
     "src": "service-worker.js",
     "scope": "/"
   },
-  "start_url": "./index.html",
+  "screenshots": [
+    {
+      "src": "assets/icons/icon-72x72.png"
+    }
+  ],
   "icons": [
     {
       "src": "assets/icons/icon-72x72.png",
