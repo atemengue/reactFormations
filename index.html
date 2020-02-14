@@ -17,6 +17,8 @@
     </svg>
     <script src="utils.js"></script>
     <script>
+      const jsonplaceholder = "https://jsonplaceholder.typicode.com/posts";
+
       // get("story.json").then(
       //   function(response) {
       //     console.log(response);
@@ -34,13 +36,88 @@
       //     console.log("YEY JSON!", response);
       //   });
 
-      function getJSON(url) {
-        return get(url).then(JSON.parse);
+      async function getJSON(url) {
+        return await get(url).then(JSON.parse);
       }
 
-      getJSON("story.json").then(function(data) {
-        console.log(data);
-      });
+      // getJSON(jsonplaceholder).then(function(posts) {
+      //   getJSON(`${jsonplaceholder}/${posts[0].id}`).then(function(data) {
+      //     console.log(data);
+      //   });
+      // });
+
+      var postPromise;
+
+      function getPost(i) {
+        postPromise = postPromise || getJSON(jsonplaceholder);
+
+        return postPromise.then(function(posts) {
+          return getJSON(`${jsonplaceholder}/${posts[i].id}`);
+        });
+      }
+
+      // getPost(0)
+      //   .then(function(post) {
+      //     console.log(post);
+      //     return getPost(1);
+      //   })
+      //   .then(function(post) {
+      //     console.log(post);
+      //   });
+
+      // getJSON(jsonplaceholder)
+      //   .then(function(posts) {
+      //     console.log(typeof posts);
+      //     // return getJSON(`${jsonplaceholder}/${posts[0]}`);
+      //   })
+      //   .then(function(post1) {
+      //     console.log(post1);
+      //   });
+
+      // getJSON("story.json").then(function(data) {
+      //   console.log(data);
+      // });
+
+      // getJSON("story.json")
+      //   .then(function(story) {
+      //     return getJSON(story.chapterUrls[0]);
+      //   })
+      //   .then(function(chapter1) {
+      //     console.log(chapter1);
+      //   });
+
+      getJSON(jsonplaceholder)
+        .then(function(posts) {
+          posts.forEach(post => {
+            getJSON(`${jsonplaceholder}/${post.id}`).then(function(data) {
+              addHtmlToPage(post.id);
+            });
+          });
+        })
+        .then(function() {
+          addTextToPage("All done");
+        })
+        .catch(function() {
+          addTextToPage("Failed to show chapter");
+        })
+        .then(function() {
+          document.querySelector(".spinner").style.display = "none";
+        });
+
+      // try {
+      //   var posts = getJSON(jsonplaceholder);
+      //   posts.then(function(data) {
+      //     console.log(data, "data");
+      //   });
+      //   console.log(posts);
+      //   var post1 = getJSON(`${jsonplaceholder}/1`);
+      //   addHtmlToPage(post1.body);
+      // } catch (error) {
+      //   console.log(error);
+      //   addTextToPage("Failed to show chapter");
+      // } finally {
+      //   document.querySelector(".spinner").style.display = "none";
+      // }
     </script>
   </body>
 </html>
