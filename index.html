@@ -85,25 +85,103 @@
       //   .then(function(chapter1) {
       //     console.log(chapter1);
       //   });
+      // var sequence = Promise.resolve();
+
+      // getJSON(jsonplaceholder)
+      //   .then(function(posts) {
+      //     posts.forEach(post => {
+      //       sequence = sequence.then(function() {
+      //         return getJSON(`${jsonplaceholder}/${post.id}`).then(function(
+      //           data
+      //         ) {
+      //           addHtmlToPage(post.id);
+      //         });
+      //       });
+      //     });
+      //   })
+      //   .then(function() {
+      //     addTextToPage("All done");
+      //   })
+      //   .catch(function() {
+      //     addTextToPage("Failed to show chapter");
+      //   })
+      //   .then(function() {
+      //     document.querySelector(".spinner").style.display = "none";
+      //   });
+
+      // getJSON(jsonplaceholder)
+      //   .then(function(posts) {
+      //     posts.reduce(function(sequence, post) {
+      //       return sequence.then(function() {
+      //         return getJSON(`${jsonplaceholder}/${post.id}`).then(function(
+      //           post
+      //         ) {
+      //           addHtmlToPage(post.id);
+      //         });
+      //       });
+      //     }, Promise.resolve());
+      //   })
+
+      //   .catch(_ => {
+      //     addTextToPage("Failed to show chapter");
+      //   })
+      //   .then(function() {
+      //     addHtmlToPage("All done!!!");
+      //     document.querySelector(".spinner").style.display = "none";
+      //   });
+
+      // getJSON(jsonplaceholder)
+      //   .then(function(posts) {
+      //     // telechargement parallele
+      //     return posts
+      //       .map(post => getJSON(`${jsonplaceholder}/${post.id}`))
+      //       .reduce(function(sequence, postPromise) {
+      //         // Utilisez réduire pour enchaîner les promesses ensemble,
+      //         // ajouter du contenu à la page pour chaque chapitre
+      //         return (
+      //           sequence
+      //             // Wait for everything in the sequence so far,
+      //             // then wait for this chapter to arrive.
+      //             .then(function() {
+      //               return postPromise;
+      //             })
+      //             .then(function(post) {
+      //               addHtmlToPage(post.body);
+      //             })
+      //         );
+      //       });
+      //   }, Promise.resolve())
+
+      //   .catch(_ => {
+      //     addTextToPage("Failed to show chapter");
+      //   })
+      //   .then(function() {
+      //     addHtmlToPage("All done!!!");
+      //     document.querySelector(".spinner").style.display = "none";
+      //   });
 
       getJSON(jsonplaceholder)
         .then(function(posts) {
-          posts.forEach(post => {
-            getJSON(`${jsonplaceholder}/${post.id}`).then(function(data) {
+          return Promise.all(
+            posts.map(post => getJSON(`${jsonplaceholder}/${post.id}`))
+          ).then(function(posts) {
+            posts.forEach(post => {
+              console.log(post);
               addHtmlToPage(post.id);
             });
           });
+
+          then(function(posts) {
+            addHtmlToPage("All done!!!");
+          });
         })
-        .then(function() {
-          addTextToPage("All done");
-        })
-        .catch(function() {
+        .catch(_ => {
           addTextToPage("Failed to show chapter");
         })
         .then(function() {
+          addHtmlToPage("All done!!!");
           document.querySelector(".spinner").style.display = "none";
         });
-
       // try {
       //   var posts = getJSON(jsonplaceholder);
       //   posts.then(function(data) {
