@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="network-fake">
+      <label><input type="checkbox" /> Fake network delay</label>
+    </div>
+    <div class="story"></div>
+    <svg class="spinner" viewBox="0 0 100 100" width="20" height="20">
+      <circle cx="50" cy="50" r="42" transform="rotate(-90,50,50)" />
+    </svg>
+    <script src="utils.js"></script>
+    <script>
+      // get("story.json").then(
+      //   function(response) {
+      //     console.log(response);
+      //   },
+      //   function(error) {
+      //     console.log(error);
+      //   }
+      // );
+
+      // get("story.json")
+      //   .then(function(response) {
+      //     return JSON.parse(response);
+      //   })
+      //   .then(function(response) {
+      //     console.log("YEY JSON!", response);
+      //   });
+
+      function getJSON(url) {
+        return get(url).then(JSON.parse);
+      }
+
+      getJSON("story.json").then(function(data) {
+        console.log(data);
+      });
+    </script>
+  </body>
+</html>
