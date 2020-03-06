@@ -57,6 +57,7 @@ self.addEventListener("fetch", event => {
           if (response.status === 404) {
             return caches.match("pages/404.html");
           }
+          // add ressource inside service worker
           return caches.open(staticCacheName).then(cache => {
             cache.put(event.request.url, response.clone());
             return response;
@@ -64,7 +65,55 @@ self.addEventListener("fetch", event => {
         });
       })
       .catch(error => {
+        // return fetch(event.request)
+        // .then(response => {
+        //   return caches.open(staticCacheName)
+        //   .then(cache => {
+        //     cache.put(event.request, response.clone());
+        //     return response;
+        //   })
+        // })
         return caches.match("pages/offline.html");
       })
   );
+});
+
+// SUGGESTION D'AMELIORATION DE CODE
+
+// self.addEventListener('fetch', event => {
+//   var response ;
+//   event.respondWith(caches.match(event.request).catch(function(){
+//     return fetch(event.request);
+//   }).then(function(r){
+//     response = r;
+//     caches.open(staticCacheName)
+//     .then(cache => {
+//       cache.put(event.request, response)
+//     })
+//     return response.clonel
+//   })
+//   .catch(function(){
+//     return caches.match("pages/offline.html");
+//   })
+
+//   )W
+
+// })
+
+self.addEventListener("beforeinstallprompt", event => {
+  console.log("installing home screen");
+  event.preventDefault();
+  let promptEvt = event;
+  if (promptEvt !== "undefined") {
+    promptEvt.prompt();
+    promptEvt.usechoice.then(choice => {
+      if (choice.outcame === "accept") {
+        console.log("okok");
+      } else {
+        console.log("refused");
+      }
+    });
+  } else {
+    promptEvt = null;
+  }
 });

@@ -5,7 +5,7 @@ ul {
   color: grey;
 }
 
-h3 {
+h1 {
   color: black;
 }
 
@@ -53,6 +53,7 @@ h3.subtitle {
 /* TEXT */
 
 .text {
+  font-size: 18px;
   text-align: justify;
   line-height: 150%;
 }
@@ -152,12 +153,20 @@ header nav ul .menu-download {
 .picture-header-container {
   width: 80%;
   margin: auto;
+  text-align: center;
+  display: block;
 }
 
 .picture-header img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+@media only screen and (min-width: 1200px) {
+  .picture-header img {
+    margin-left: 10%;
+  }
 }
 
 /* PICTURE HEADER END */
@@ -167,8 +176,37 @@ header nav ul .menu-download {
   text-align: center;
 }
 
-/* ABOUT APP END */
+/* LIST OL */
 
+#module {
+  width: 80%;
+  margin: 10px;
+}
+ol {
+  color: #ccc;
+  list-style-type: none;
+}
+
+ol li {
+  position: relative;
+  font: 500 italic 45px/1.5 Helvetica, Verdana, sans-serif;
+  margin-bottom: 20px;
+}
+
+li p {
+  font-size: 16px;
+  padding-left: 60px;
+  color: #555;
+}
+
+span.number {
+  position: absolute;
+}
+
+span.module-name {
+  font-weight: 700;
+}
+/* ABOUT APP END */
 /* HOW TO BUILD */
 .how-to-build-flex {
   display: flex;
