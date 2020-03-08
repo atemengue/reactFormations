@@ -1,3 +1,5 @@
+/** @format */
+
 body,
 ul {
   margin: 0;
@@ -29,6 +31,7 @@ img {
 .container {
   width: 80%;
   margin: auto;
+  clear: both;
 }
 
 /* CONTAINER-FLEX */
@@ -135,12 +138,12 @@ header nav ul .menu-download {
     height: 100%;
     margin: auto;
   }
-  .download-app .btn-down {
+  /* .download-app .btn-down {
     display: none;
   }
   .menu-download .burger-buttom {
     display: block;
-  }
+  } */
 }
 
 /* HEADER END */
@@ -165,7 +168,7 @@ header nav ul .menu-download {
 
 @media only screen and (min-width: 1200px) {
   .picture-header img {
-    margin-left: 10%;
+    margin-left: 5%;
   }
 }
 
@@ -215,7 +218,7 @@ span.module-name {
   flex: 1;
 }
 
-.how-to-build-flex .img-container {
+.how-to-build-flex container {
   flex: 1;
 }
 
@@ -225,6 +228,14 @@ span.module-name {
   display: block;
 }
 
+.thumbnail {
+  border: 2px solid #c0c0c0;
+  padding: 5px;
+}
+
+.thumbnail:hover {
+  box-shadow: 5px 4px 10px #dacccc;
+}
 @media screen and (max-width: 600px) {
   .how-to-build-flex {
     display: block;
@@ -255,6 +266,7 @@ footer {
   position: relative;
   height: 150px;
   background-color: #fe5f08;
+  padding-bottom: 20px;
 }
 
 footer div {
@@ -272,15 +284,47 @@ footer .ul-link {
   padding: 20px;
 }
 
+footer a {
+  text-decoration: none;
+  color: #555;
+}
+
 footer .ul-link .link-item {
   height: 50px;
+  cursor: pointer;
   width: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: white;
-  margin: 5px;
+  margin: 10px;
   border-radius: 50%;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  transition: transform 0.3ms;
+}
+
+footer.nane {
+}
+
+footer .ul-link .link-item:hover {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 /* FOOTER END */
+
+/* test css responsive */
+
+#how-to-build-img {
+  background-image: url('../assets/images/iphone1.png');
+  background-size: cover;
+  float: left;
+  margin: 0 2vw 1vw 0;
+  position: relative;
+  height: auto;
+  display: block;
+  width: 100%;
+}

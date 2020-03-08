@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <link rel="manifest" href="manifest.json" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./styles/main.css" />
 
@@ -21,11 +23,7 @@
             <li class="download-app">
               <button class="btn-down">DOWNLOAD APP</button>
             </li>
-            <li class="burger-buttom">
-              <div></div>
-              <div></div>
-              <div></div>
-            </li>
+            
           </div>
         </ul>
       </nav>
@@ -83,18 +81,18 @@
             <li><span class="number">1.</span>
               <p>
                 <span>géolocalisation:<span/><br>
-                  	Localiser mon véhicule : permet d’afficher la position du véhicule sur une carte (Google map) avec des coordonnées GPS.<br/>
-                  	Sauvegarder mon itinéraire : permet d’enregistrer à une fréquence définie les coordonnées GPS du véhicule pour retracer ultérieurement son itinéraire.<br/>
-                  	Partager ma position : permet d’envoyer par sms ou par mail un lien URL avec cordonnées GPS du véhicule.<br/>
+                  &#8594; Localiser mon véhicule : permet d’afficher la position du véhicule sur une carte (Google map) avec des coordonnées GPS.<br/>
+                 &#8594;	Sauvegarder mon itinéraire : permet d’enregistrer à une fréquence définie les coordonnées GPS du véhicule pour retracer ultérieurement son itinéraire.<br/>
+                 &#8594;	Partager ma position : permet d’envoyer par sms ou par mail un lien URL avec cordonnées GPS du véhicule.<br/>
                </p>
             </li>
             <li><span class="number">2.</span>
               <p>
                 <span >Diagnostic :<span/><br>
-                  	Faire un diagnostic complet de la voiture : affiche l’état de tous les capteurs du véhicule.<br/>
-                  	Afficher l’état d’une composante du véhicule (Ex : la température du moteur, la pression d’air dans les pneus)<br/>
-                  	Vérifier paramètre de déplacement dans la ville : s’assurer que le véhicule rempli un certain nombre de critère pour les déplacements intra-urbain.<br/>
-                  	Vérifier paramètre de voyage : s’assurer que le véhicule rempli un certain nombre de critère
+                 &#8594;	Faire un diagnostic complet de la voiture : affiche l’état de tous les capteurs du véhicule.<br/>
+                 &#8594;	Afficher l’état d’une composante du véhicule (Ex : la température du moteur, la pression d’air dans les pneus)<br/>
+                 &#8594;	Vérifier paramètre de déplacement dans la ville : s’assurer que le véhicule rempli un certain nombre de critère pour les déplacements intra-urbain.<br/>
+                 &#8594;	Vérifier paramètre de voyage : s’assurer que le véhicule rempli un certain nombre de critère
                   pour les déplacements interurbain (Ex : le niveau de carburant, l’état de la climatisation, le niveau de la batterie…) <br/>
                   
                </p>
@@ -102,22 +100,22 @@
             <li><span class="number">3.</span>
               <p>
                 <span>Maintenance:<span/><br>
-                  	Appeler un mécanicien : permet de lancer un appel à un mécanicien directement à partir de l’application. <br>
-                  	Envoyer SMS des pannes au mécanicien : permet d’envoyer un sms contenant un résumé de panne à un mécanicien. <br>
-                  	Visualiser état véhicule lors de la panne : afficher l’état des capteurs du véhicule au moment de l’apparition d’une panne. <br>
-                  	Accéder aux conseils de réparation : propose une liste de conduite à tenir en d’apparition d’une panne. <br>
-                  	Accéder aux rapports de réparation : permet d’afficher les rapports de réparation d’une panne apparu et résolution par d’autre utilisateur.  <br>
+                 &#8594;	Appeler un mécanicien : permet de lancer un appel à un mécanicien directement à partir de l’application. <br>
+                 &#8594;	Envoyer SMS des pannes au mécanicien : permet d’envoyer un sms contenant un résumé de panne à un mécanicien. <br>
+                 &#8594;	Visualiser état véhicule lors de la panne : afficher l’état des capteurs du véhicule au moment de l’apparition d’une panne. <br>
+                 &#8594;	Accéder aux conseils de réparation : propose une liste de conduite à tenir en d’apparition d’une panne. <br>
+                 &#8594;	Accéder aux rapports de réparation : permet d’afficher les rapports de réparation d’une panne apparu et résolution par d’autre utilisateur.  <br>
                   
                </p>
             </li>
             <li><span class="number">4.</span>
               <p>
                 <span>Configuration:<span/><br>
-                  	Entrer les paramètres de connexion au prototype (mot passe Bluetooth, numéro GSM, …) <br> 
-                  	Entrer les paramètres de l’application : définir les standards des capteurs    
+                 &#8594;	Entrer les paramètres de connexion au prototype (mot passe Bluetooth, numéro GSM, …) <br> 
+                 &#8594;	Entrer les paramètres de l’application : définir les standards des capteurs    
                    (Ex : capteur moteur, capteur de freinage, capteur d’Airbag, capteur de la climatisation…)<br>
-                  	Enregistrer les numéros d’urgence : permet de définir les numéros à appeler en cas de détresse.<br> 
-                  	Personnaliser le message de détresse : permet de définir le contenu du sms de détresse envoyé par 
+                 &#8594;	Enregistrer les numéros d’urgence : permet de définir les numéros à appeler en cas de détresse.<br> 
+                 &#8594;	Personnaliser le message de détresse : permet de définir le contenu du sms de détresse envoyé par 
                   le module GSM aux numéros préenregistré.<br> 
                   
                </p>
@@ -141,23 +139,27 @@
             plus ou moins fonctionnel du produit demandé. <br />
             Ayant travailler sur 3 mois pour construire ce prototype l'équipe debutat la compétition
             par le choix d'une méthodologie projet qui permettra de faire une planication de toutes
-            les taches à realiser pour terminer le prototype dans les details. Le cahier de charge 
-            technique étant déja été fournie par l'organisateur, il a été plus facile de planifier toutes
+            les taches à realiser pour terminer le prototype dans les détails. Le cahier de charge 
+            technique ayant déja été fournie par l'organisateur, il a été plus facile de planifier toutes
             les taches nécessaires pour construire notre prototype.
           </p>
           <p class="text">
             La méthodologie throw-away prototying a été notre support tout au long de la compétition. 
-            La création d'un prototype (sale) sur lequel on fait plusieurs itérations  au cours 
-            des semaines avenir d'avoir un prototype assez propre pour la compétition.
+            La création d'un prototype (sale) sur lequel plusieurs iterations etait effectueen prototype assez propre pour la compétition.
           </p>
         </div>
-        <div class="img-container mini-container-right">
+        
+        <a href="./assets/images/iphone1.png"   data-fancybox class="img-container mini-container-right">
+          <figure>
           <img
-            class="img-responsive"
+            
+            class="img-responsive thumbnail"
             src="./assets/images/iphone1.png"
             alt="ui app"
-          />
-        </div>
+            />
+          </figure>
+          <figcaption>Fig.1 - Image1</figcaption>
+          </a>
       </div>
     </section>
     <!-- How to buid this app  end-->
@@ -166,16 +168,29 @@
       <h1>CONCEPTION ET WIREFRAMES</h1>
       <div class="design-wireframes">
         <div class="mini-container-left">
-          <img
-            src="./assets/images/wireframes1.jpg"
-            alt="wireframes sur papier 1"
-          />
+          <a href="./assets/images/wireframes1.jpg" data-fancybox="">
+            
+            <figure>
+              <img
+              src="./assets/images/wireframes1.jpg"
+              alt="wireframes sur papier 1"
+              class="thumbnail"
+              />
+              <figcaption>Figure 2: Image2</figcaption>
+            </figure>
+          </a>
         </div>
         <div class="mini-container-right">
-          <img
-            src="./assets/images/wireframes1.jpg"
-            alt="wireframes sur papier 2"
-          />
+          <a href="./assets/images/wireframes1.jpg" data-fancybox="">
+            <figure>
+              <img
+              src="./assets/images/wireframes1.jpg"
+              alt="wireframes sur papier 2"
+              class="thumbnail"
+              />
+              <figcaption>Fig.1 - Image1</figcaption>
+            </figure>
+          </a>
         </div>
       </div>
     </section>
@@ -186,9 +201,8 @@
       <div class="container-flex">
         <div class="container-flex-item mini-container-left">
           <p class="text">
-            Le concours etant principalement basé la conception des interfaces utilisateurs
-            il etait important pour nous d'avoir une vue plus ou moins globale sur l'ensemble de l'application
-            a proposé. 
+            Le concours etant principalement basé la conception des interfaces utilisateurs,
+            il etait important pour nous d'avoir une vue sur l'ensemble de l'application a proposée. 
             <br>
             Nous avons donc commnencer par déssiner les maquettes de notre application sur papier tout en discutant 
             du worflow et de la navigation entre les differentes vues de l'application. Mes competeneces
@@ -197,22 +211,30 @@
           </p>
         </div>
         <div class="container-flex-item  mini-container-right">
-          <img src="./assets/images/xd1.png" alt="ui frame 1" />
+          <a href="./assets/images/xd1.png" data-fancybox>
+            <figure>
+              <img src="./assets/images/xd1.png" alt="ui frame 1" class="thumbnail" />
+              <figcaption>Figure 2: image 4</figcaption>
+            </figure>
+          </a>
         </div>
       </div>
-      <div class="container-flex">
+      <a class="container-flex">
         <div class="container-flex-item mini-container-left">
           <p class="text">
-           Nos wireframes etant pret sur papier. L'equipe est passe sur des interfaces en couleurs 
-           en utilisant le logiciel ADOBE XD pour avoir notre premiere experience. l'avantage de ADOBE
-           XD possibilite d'avoir un prototype interfaces partageable et testable sur un telephone. La simulation
-           d'une experience mobile semblable au rendu final. La Section Design a nous permit de construire 
-           toute les interfaces et la section prototype de definir le worflow et tester
+           Nos wireframes pret sur papier. L'équipe est passéé sur des interfaces en couleurs (UI)
+           en utilisant le logiciel ADOBE XD pour avoir notre première experience. l'avantage de ADOBE
+           XD possibilite d'avoir un prototype d'interface partageable et testable directement sur un télephone mobile, 
+           une experience mobile semblable au rendu final. La section DESIGN a nous permit de construire 
+           toute les interfaces et la section PROTOTYPE de definir le processus de navigation et de tester.
           </p>
         </div>
-        <div class="container-flex-item  mini-container-right">
-          <img src="./assets/images/xd3.png" alt="ui frame 1" />
-        </div>
+        <a href="./assets/images/xd3.png" data-fancybox="gallery" class="container-flex-item  mini-container-right">
+          <figure>
+            <img class="thumbnail" src="./assets/images/xd3.png" alt="ui frame 1" />
+            <figcaption>Figure image1</figcaption>
+          </figure>
+        </a>
       </div>
     </section>
     <!-- ui en worflows end -->
@@ -222,32 +244,35 @@
     <section class="container">
       <h1 class="subtitle">DEVELOPEMENT</h1>
       <section class="container-flex">
-        <div class="container-flex-item mini-container-left">
-          <img src="./assets/images/logo.png" alt="code" />
-        </div>
+        <a href="./assets/images/logo.png" data-fancybox="" class="container-flex-item mini-container-left">
+          <figure>
+            <img src="./assets/images/logo.png" alt="code" class="thumbnail" />
+            <figcaption>Figure: image</figcaption>
+          </figure>
+        </a>
         <div class="container-flex-item  mini-container-right">
           <p class="text">
             
           </p>
           <h2>Pret pour le code</h2>
           <p class="text  ">
-           L'une de mes partie que j'aime le plus dans la realistion d'un produit web
-           mobile est la phase de developpement. << resortir ce qu'il y'a dans la tete ou sur papier >>
-           Les meilleurs architectes web ou mobile sont aussi de tres bon developpeur C'est pourquoi faire 
-           il est tres important de maitrise la chaine de logiciel de developpement et de pouvoir 
-           intervenir si on travaille avec une petite equipe comme dans ce projet.
+           L'une des phases que j'aime le plus lors de la réalisation d'un produit web ou
+           mobile est la phase de développement. durant laquelle l'equipe fait ressortir toute sa maitrise
+           technique pour donner vie au produit. <br>
+           Les meilleurs architectes web ou (et) mobile sont aussi de très bon developpeur. C'est pourquoi faire 
+           il est très important d'avoir une maitrise la chaine de developpement logiciel et de pouvoir 
+           intervenir si on travaille dans une petite équipe comme le cas de ce projet.
           </p>
 
           <p class="text  ">
-           Pour une notre phase de developpement l'equipe a travailler avec la technologie 
-           React-Native de facebook, il s'agit de technologie permettant de creer des applications
+           Pour une notre phase de développement l'équipe a travailler avec la technologie 
+         <a href="" >React-Native</a> de facebook, il s'agit de technologie permettant de créer des applications
            mobiles multiplateformes basee sur le language javascript plus precisement sur React.
-           la realisation du prototype a ete plus rapide 
           </p>
           <p class="text">
-            Toujours dans les bonnes pratique de code. L'environnement de developpement est tres 
-            important, l'editeur de code utilisee etait Vs code de microsoft couplee a plusieurs
-            extensions pour avoir un code plus propre.(ESLINT, PRETTIER, REACT-SNIPPETS etc..)
+            Toujours dans les bonnes pratique de code. L'environnement de developpement etait Visual Code 
+            utilisée de microsoft couplée avec  plusieurs.
+            extensions pour avoir une meulleur qualite de code.(ESLINT, PRETTIER, REACT-SNIPPETS etc..)
           </p>
         </div>
       </section>
@@ -257,30 +282,25 @@
     <footer>
       <div>
         <ul class="ul-link">
-          <li class="link-item">f</li>
-          <li class="link-item">I</li>
-          <li class="link-item">T</li>
-          <li class="link-item">L</li>
+          <a href="https://www.linkedin.com/in/regis-atemengue/" class="link-item">
+            <i class="fa fa-linkedin" aria-hidden="true"></i>
+          </a>
+          <a href="https://www.instagram.com/regis_ate/" class="link-item">
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+          </a>
+          <a href="https://twitter.com/regis_ate" class="link-item">
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+          </a>
+          <a href="https://github.com/atemengue" class="link-item">
+            <i class="fa fa-github" aria-hidden="true"></i>
+          </a>
         </ul>
-        <span>Copyright 2020 @RegisAtemengue</span>
+        <span>Copyright 2020 @<a href="#">RegisAtemengue</a></span>
       </div>
     </footer>
     <!-- footer end -->
 
-    <!-- script -->
-    <!-- <script>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker
-            .register('service-worker.js')
-            .then(registration => {
-              console.log('Service Worker is registered', registration);
-            })
-            .catch(err => {
-              console.log('Registration failed', err);
-            });
-        });
-      }
-    </script> -->
-  </body>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    </body>
 </html>
