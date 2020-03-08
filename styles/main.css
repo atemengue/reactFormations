@@ -168,6 +168,12 @@ header nav ul .menu-download {
 
 @media only screen and (min-width: 1200px) {
   .picture-header img {
+    margin-left: 0;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .picture-header img {
     margin-left: 5%;
   }
 }
