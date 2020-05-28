@@ -1,12 +1,23 @@
 const path = require("path");
 
 module.exports = {
-  entry: "./lib/components/index.js",
+  entry: ["babel-polyfill", "./lib/components/index.js"],
   output: {
     path: path.resolve(__dirname, "public"),
     filename: "bundle.js",
   },
   module: {
-    rules: [{ test: /\.js$/, use: "babel-loader" }],
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["react", "env", "stage-2"],
+          },
+        },
+      },
+    ],
   },
 };
