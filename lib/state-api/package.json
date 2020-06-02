@@ -1,7 +1,7 @@
 {
   "name": "state-api",
   "version": "1.0.0",
-  "main": "/lib/index.js",
+  "main": "lib/index.js",
   "repository": "https://github.com/jscomplete/state-api",
   "author": "Regis Atemengue",
   "license": "MIT"
