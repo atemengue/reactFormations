@@ -1,27 +1,31 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 import Home from './Home';
 import Profile from './Profile';
 import Nav from './Nav';
-import Auth from './Auth/Auth';
+import CallBack from './Callback';
+import { useAuth0 } from '@auth0/auth0-react';
 
-class App extends  Component {
-constructor(props) {
-  super(props);
-  this.auth = new Auth(this.props.history);
-}
-
-
-render() {
+const App  = (props) => {
+  const { isAuthenticated } = useAuth0();
   return (
     <>
       <Nav />
-      <div className="body">
+      <div className='body'>
         <Route path='/' exact component={Home} />
-        <Route path='/profile' component={Profile} />
+        <Route path='/profile' 
+          render={
+             props => 
+               isAuthenticated
+               ? <Profile {...props}/> 
+               : <Redirect />
+             
+          }
+        />
+        <Route path='/callback' component={CallBack} />
       </div>
     </>
   );
-  }
 }
+
 export default App;
