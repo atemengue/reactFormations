@@ -12,8 +12,8 @@ ReactDOM.render(
       domain={process.env.REACT_APP_AUTH0_DOMAIN}
       clientId={process.env.REACT_APP_AUTH0_CLIENT_ID}
       redirectUri={process.env.REACT_APP_AUTH0_CALLBACK_URL}
-      cacheLocation="localstorage"
-      
+      cacheLocation='localstorage'
+      audience={process.env.REACT_APP_AUTH0_AUDIENCE}
     >
       <Router>
         <Route component={App} />

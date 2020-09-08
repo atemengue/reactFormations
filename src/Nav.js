@@ -12,6 +12,15 @@ import { Link } from 'react-router-dom'
           <li>
             <Link to='/profile'>Profile</Link>
           </li>
+          <li>
+            <Link to='/profile'>Profile</Link>
+          </li>
+          <li>
+            <Link to='/public'>Public</Link>
+          </li>
+          <li>
+            <Link to='/private'>private</Link>
+          </li>
         </ul>
       </nav>
     );
