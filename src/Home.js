@@ -1,4 +1,6 @@
-import React, { Component } from 'react'
+/** @format */
+
+import React, { Component } from 'react';
 import LoginButton from './Auth/LoginButton';
 import LogoutButton from './Auth/LogoutButton';
 import { useAuth0 } from '@auth0/auth0-react';
@@ -11,12 +13,14 @@ const Home = (props) => {
       <h1>Home</h1>
       {isAuthenticated ? (
         <>
-          <Link to ="/profile">View profile</Link>
+          <Link to='/profile'>View profile</Link>
           <LogoutButton />
         </>
-      ) : <LoginButton />}
+      ) : (
+        <LoginButton />
+      )}
     </div>
   );
-}
+};
 
 export default Home;

@@ -1,7 +1,10 @@
+/** @format */
+
 const express = require('express');
 require('dotenv').config();
 const jwt = require('express-jwt');
 const jwksRsa = require('jwks-rsa');
+const checkScope = require('express-jwt-authz');
 
 const checkJwt = jwt({
   secret: jwksRsa.expressJwtSecret({
@@ -18,18 +21,29 @@ const checkJwt = jwt({
   algorithms: ['RS256'],
 });
 
-
 const app = express();
 
-app.get('/public', function(req, res){
+app.get('/public', function (req, res) {
   res.json({
-    message: 'Hello from a public API!'
+    message: 'Hello from a public API!',
   });
 });
 
 app.get('/private', checkJwt, function (req, res) {
   res.json({
     message: 'Hello from a private  API!',
+  });
+});
+
+app.get('/courses', checkJwt, checkScope(['read:courses']), function (
+  req,
+  res
+) {
+  res.json({
+    courses: [
+      { id: 1, title: 'React Redux Mastering' },
+      { id: 2, title: 'Management state with Reacct' },
+    ],
   });
 });
 
