@@ -14,6 +14,7 @@ ReactDOM.render(
       redirectUri={process.env.REACT_APP_AUTH0_CALLBACK_URL}
       cacheLocation='localstorage'
       audience={process.env.REACT_APP_AUTH0_AUDIENCE}
+      scope="read:courses"
     >
       <Router>
         <Route component={App} />

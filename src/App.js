@@ -23,8 +23,13 @@ const App  = (props) => {
         />
         <Route path='/callback' component={CallBack} />
         <Route path='/public' component={Public} />
-        <Route path='/private' component={Private} />
-      </div> 
+        <Route
+          path='/private'
+          render={(props) =>
+            isAuthenticated ? <Private {...props} /> : <Redirect />
+          }
+        />
+      </div>
     </>
   );
 }

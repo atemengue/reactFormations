@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import { useAuth0 } from '@auth0/auth0-react';
 
- class Nav extends Component {
-  render() {
+
+ const Nav = (props) => {
+  const { isAuthenticated } = useAuth0();
     return (
       <nav>
         <ul>
@@ -18,13 +20,16 @@ import { Link } from 'react-router-dom'
           <li>
             <Link to='/public'>Public</Link>
           </li>
-          <li>
-            <Link to='/private'>private</Link>
-          </li>
+          {
+            isAuthenticated  && (
+              <li>
+              <Link to='/private'>private</Link>
+            </li>
+            )
+          }
         </ul>
       </nav>
     );
-  }
 }
 
 export default Nav;
