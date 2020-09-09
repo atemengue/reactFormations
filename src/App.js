@@ -43,10 +43,9 @@ const App = (props) => {
         />
         <Route
           path='/courses'
-          c
           render={(props) =>
             isAuthenticated && userHascopes(['read:courses']) ? (
-              <Courses auth={userHascopes} {...props} />
+              <Courses {...props} />
             ) : (
               <Redirect />
             )
