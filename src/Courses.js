@@ -11,8 +11,6 @@ export default function Courses() {
     async function getAccessToken() {
       const accessToken = await getAccessTokenSilently();
 
-      console.log(accessToken, 'ACCESS TOKEN');
-
       await fetch('/courses', {
         headers: { Authorization: `Bearer ${accessToken}` },
       })
@@ -22,6 +20,16 @@ export default function Courses() {
         })
         .then((response) => setcourses(response.courses))
         .catch((error) => setcourses(error.message));
+
+      await fetch('/admin', {
+        headers: { Authorization: `Bearer ${accessToken}` },
+      })
+        .then((response) => {
+          if (response.ok) return response.json();
+          throw new Error('Network response was not ok.');
+        })
+        .then((response) => console.log(response))
+        .catch((error) => console.log(error));
     }
 
     getAccessToken();

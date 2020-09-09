@@ -83,4 +83,42 @@ export default class Auth {
     ).split(' ');
     return scopes.every((scope) => grantedScopes.includes(scope));
   }
+
+  // add user context
+  function(user, context, callback) {
+    // TODO: implement your rule
+    if (!user.email || !user.verified) {
+      return callback(null, user, context);
+    }
+
+    user.app_metadata = user.app_metadata || {};
+
+    const addRolesToUser = function (user) {
+      const endsWidth = '@reactjsconsulting.com';
+
+      if (
+        user.email &&
+        user.email.substring(user.email.length - endsWidth.length, user.email)
+      ) {
+        return ['admin'];
+      }
+
+      return ['user'];
+    };
+
+    const roles = addRolesToUser(user);
+
+    user.app_metadata.roles = roles;
+
+    auth0.users
+      .updateAppMetadata(user.user_id, user.app_metadata)
+      .then(function () {
+        context.idToken['http://localhost:3000/roles'] =
+          user.app_metadata.roles;
+        callback(null, user, context);
+      })
+      .catch(function (err) {
+        callback(err);
+      });
+  }
 }
